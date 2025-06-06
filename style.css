@@ -1,0 +1,202 @@
+/* Add your CSS here */
+
+body {
+    margin: 0 auto;
+    
+    /* font sizing */
+    font-size: 16px; /* Base font size */
+    font-family: "Montserrat", Verdana, sans-serif; /* Use Montserrat from Google Fonts, then Verdana, then any sans-serif */
+    color: whitesmoke;
+
+}
+
+p {
+    font-size: 1em;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+section {
+    /* Center the section */
+    margin: 0 auto;
+    padding: 2vh; /* Add some padding around the section */
+    
+}
+
+header {
+    /* Center the hero section */
+    margin: 0 auto;
+
+    /* Make the header take up the full width of the viewport */
+    width: 100%;
+
+    /* Add padding for space inside the header */
+    padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+
+    color: whitesmoke; /* Set text color to white */
+
+    /* Add a simple blue gradient background */
+    background: linear-gradient(to right, #35a4ff, #09316e); /* Light blue to dark blue */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+header img {
+    max-width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em; /* Slightly larger text for the paragraph */
+    padding: 0px;
+}
+
+.timeline {
+    /* Center the timeline horizontally */
+    margin : 0 auto;
+
+    /* Use flexbox to place cards in a row */
+    display: flex;                 /* Place cards in a row */
+    flex-direction: row;           /* Make sure the direction is horizontal */
+    flex-wrap: nowrap;             /* Do not wrap cards to the next line */
+    gap: 20px;                     /* Space between cards */
+    overflow-x: auto;              /* Enable horizontal scrolling if needed */
+    box-sizing: border-box;        /* Include border and padding in the width */
+    width: 75%;                   /* Take up 100% of the available width */
+    margin: 0 auto;                /* Center the timeline */
+    padding-bottom: 1vh;           /* Space below the timeline */
+    padding-top: 5em;              /* Space above the timeline */
+
+    /* Add scroll snap for smooth card snapping */
+    scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+}
+
+
+
+/* Style for each card */
+.card {
+    /* Gradient background for each card */
+    background: linear-gradient(to bottom right,#59b4ff, #2c548f); /* Light blue to darker blue */
+    padding: 10px;
+    position: relative;      /* Needed for overlay positioning */
+    min-width: 300px;        /* Each card is always at least 300px wide */
+    max-width: 300px;        /* Each card is never more than 300px wide */
+    min-height: 300px;       /* Each card is always at least 300px tall */
+    max-height: 300px;       /* Each card is never more than 300px tall */
+    border-radius: 8px;      /* Rounded corners for a softer look */
+    box-sizing: border-box;  /* Include padding and border in the size */
+
+    /* Make each card snap to the start of the scroll area */
+    scroll-snap-align: start;      /* Snap each card to the start */
+}
+
+/* Make sure text wraps and doesn't overflow the card */
+.card p {
+    word-wrap: break-word;   /* Break long words to fit in the card */
+    overflow-wrap: break-word; /* Break long words to fit in the card */
+    white-space: normal;     /* Allow text to wrap to the next line */
+    font-size: 1.2em;          /* Keep font size readable */
+    max-width: 100%;         /* Prevent text from overflowing horizontally */
+}
+
+/* Make the image fill the card and crop if needed */
+.card img {
+    width: 100%;            /* Image fills the card's width */
+    height: 180px;          /* Fixed height for all images */
+    object-fit: cover;      /* Crop the image if it doesn't fit */
+    border-radius: 4px;     /* Rounded corners for images */
+    display: block;         /* Make sure the image is a block element */
+    /* object-fit: cover makes sure the image fills the space and crops if needed */
+}
+
+/* Container for the image and overlay */
+
+
+/* The overlay box, hidden by default */
+.card-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 113, 197, 0.9); /* Dark grey, translucent */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s;
+    border-radius: 4px;
+}
+
+/* Show the overlay when hovering the container */
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.scroll {
+    color: black;
+    text-align: center; /* Center the text inside elements with the 'scroll' class */
+    /* You can also add margin if you want to center the whole element */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    header {
+
+        padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+    }
+
+    header img {
+        width: 175px;
+
+    }
+    header h1{
+        font-size: 1.3em; /* Smaller text for smaller screens */
+    }
+
+    header p {
+        font-size: 1em; /* Smaller text for smaller screens */
+        margin : 0 auto; /* Center the paragraph */
+    }
+
+    .timeline {
+        display: flex;            /* Use flexbox */
+        flex-direction: column;   /* Stack cards vertically */
+        gap: 20px;                /* Space between cards */
+        overflow-y: auto;         /* Show vertical scrollbar if needed */
+        overflow-x: hidden;       /* Hide horizontal scrollbar */
+        width: 100%;              /* Take up full width */
+        margin: 0;                /* Remove margin */
+        padding: 0;               /* Remove padding */
+        box-sizing: border-box;   /* Include border and padding in the width */
+    }
+
+    .card {
+        min-width: 100%;          /* Card takes full width of container */
+        max-width: 100%;
+        box-sizing: border-box;   /* Include padding and border in the width */
+    }
+    .card p {
+        font-size: 1.2em; /* Smaller text for smaller screens */
+    }
+
+    .scroll {
+        font-size: 0.7em; /* Smaller text for smaller screens */
+    }
+  }
