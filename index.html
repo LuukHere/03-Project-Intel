@@ -11,9 +11,44 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS for easy styling and layout -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link id="bootstrap-css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css" />
-  
+  <!-- Script to switch to RTL or LTR if needed -->
+  <script>
+  // This script checks if the page language is one that uses right-to-left (RTL) text.
+  // If so, it sets the page direction to RTL and loads the RTL version of Bootstrap.
+  // Otherwise, it sets the direction to LTR and loads the normal Bootstrap.
+  // This is beginner-friendly and uses simple code and comments.
+
+  // This function sets the direction and Bootstrap CSS based on the language
+  function setDirectionByLang() {
+    // List of RTL languages
+    var rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+    // Get the <html> tag
+    var htmlTag = document.documentElement;
+    // Get the language from the <html> tag
+    var lang = htmlTag.getAttribute('lang');
+    // Get the Bootstrap CSS link
+    var bootstrapLink = document.getElementById('bootstrap-css');
+
+    // If the language is in the RTL list, set direction to RTL and use RTL Bootstrap
+    if (rtlLanguages.includes(lang)) {
+      htmlTag.setAttribute('dir', 'rtl'); // Set direction to right-to-left
+      bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.rtl.min.css";
+    } else {
+      htmlTag.setAttribute('dir', 'ltr'); // Set direction to left-to-right
+      bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css";
+    }
+  }
+
+  // Run when the page loads
+  window.onload = setDirectionByLang;
+
+  // Extra: Run again if the language changes (for example, if a translation tool changes the lang attribute)
+  // This helps if you use a browser extension or script to translate the page
+  var observer = new MutationObserver(setDirectionByLang);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
 </head>
 
 <body>
@@ -27,7 +62,6 @@
       <h1>
         Sustainability Through the Ages
       </h1>
-
       <!-- Subheading / Description -->
       <p>
         Explore Intel's journey through time, discovering how our commitment
@@ -39,140 +73,137 @@
 
   <!-- Timeline Cards Section -->
   <section>
-  <div class="timeline">
-    <!-- Card 1: 1968 -->
-    <div class="card">
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
+    <div class="timeline">
+      <!-- Card 1: 1968 -->
+      <div class="card">
+        <h2>1968</h2>
+        <h3>Intel Founded</h3>
         <img src="img/1.jpg" alt="Placeholder Image" />
         <div class="card-overlay">
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+          <p>
+            Robert Noyce and Gordon Moore rename the newly formed company 
+            NM Electronics to Intel Corporation, laying the foundation for 
+            decades of technological innovation.
+          </p>
         </div>
-    </div>
+      </div>
 
-    <!-- Card 2: 1971 -->
-    <div class="card">
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <img src="img/Intel_C4004.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Intel debuts the 4004, the world's first commercial microprocessor, 
-          igniting the microprocessor revolution and propelling the future 
-          of computing devices.
-        </p>
+      <!-- Card 2: 1971 -->
+      <div class="card">
+        <h2>1971</h2>
+        <h3>First Microprocessor</h3>
+        <img src="img/Intel_C4004.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Intel debuts the 4004, the world's first commercial microprocessor, 
+            igniting the microprocessor revolution and propelling the future 
+            of computing devices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: 1978 -->
+      <div class="card">
+        <h2>1978</h2>
+        <h3>8086 Processor</h3>
+        <img src="img/Intel8086.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Launch of the 8086 processor, establishing the x86 architecture 
+            that drives countless PCs and servers in the modern era.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4: 1985 -->
+      <div class="card">
+        <h2>1985</h2>
+        <h3>386 Processor</h3>
+        <img src="img/386_Processor.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Intel introduces the 386 processor with 32-bit architecture, 
+            ushering in a new era of performance and multitasking for 
+            personal computers.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5: 2006 -->
+      <div class="card">
+        <h2>2006</h2>
+        <h3>Peak GHG Emissions</h3>
+        <img src="img/Peak_GHG_Emissions.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            This year marks Intel's highest annual greenhouse gas emissions 
+            for operations. Over subsequent years, Intel invests heavily in 
+            chemical abatement, renewable energy, and energy-efficient 
+            manufacturing to reverse this trend.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6: 2020 -->
+      <div class="card">
+        <h2>2020</h2>
+        <h3>RISE Strategy</h3>
+        <img src="img/RISE_Strategy.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+            Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+            progress on climate action, water stewardship, and waste reduction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 7: 2022 -->
+      <div class="card">
+        <h2>2022</h2>
+        <h3>Net-Zero By 2040</h3>
+        <img src="img/Net-Zero_By_2040.png" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Intel announces its commitment to achieve net-zero greenhouse 
+            gas emissions (Scope 1 and 2) across its global operations 
+            by 2040, building on years of environmental initiatives.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 8: 2023 -->
+      <div class="card">
+        <h2>2023</h2>
+        <h3>Renewable Electricity</h3>
+        <img src="img/renewable_energy-1.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            The company achieves 99% renewable electricity usage worldwide, 
+            helping to drastically lower carbon emissions and driving progress 
+            toward Intel's long-term sustainability goals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 9: 2024 -->
+      <div class="card">
+        <h2>2024</h2>
+        <h3>Sustainability Summit</h3>
+        <img src="img/summit.jpg" alt="Placeholder Image" />
+        <div class="card-overlay">
+          <p>
+            Intel hosts its first Sustainability Summit, uniting suppliers, 
+            government officials, and industry leaders to collaborate on 
+            next-generation sustainable semiconductor manufacturing.
+          </p>
+        </div>
       </div>
     </div>
-
-    <!-- Card 3: 1978 -->
-    <div class="card">
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <img src="img/Intel8086.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Launch of the 8086 processor, establishing the x86 architecture 
-          that drives countless PCs and servers in the modern era.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 4: 1985 -->
-    <div class="card">
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <img src="img/386_Processor.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Intel introduces the 386 processor with 32-bit architecture, 
-          ushering in a new era of performance and multitasking for 
-          personal computers.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 5: 2006 -->
-    <div class="card">
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <img src="img/Peak_GHG_Emissions.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          This year marks Intel's highest annual greenhouse gas emissions 
-          for operations. Over subsequent years, Intel invests heavily in 
-          chemical abatement, renewable energy, and energy-efficient 
-          manufacturing to reverse this trend.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 6: 2020 -->
-    <div class="card">
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <img src="img/RISE_Strategy.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-          Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 7: 2022 -->
-    <div class="card">
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <img src="img/Net-Zero_By_2040.png" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Intel announces its commitment to achieve net-zero greenhouse 
-          gas emissions (Scope 1 and 2) across its global operations 
-          by 2040, building on years of environmental initiatives.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 8: 2023 -->
-    <div class="card">
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <img src="img/renewable_energy-1.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          The company achieves 99% renewable electricity usage worldwide, 
-          helping to drastically lower carbon emissions and driving progress 
-          toward Intel's long-term sustainability goals.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 9: 2024 -->
-    <div class="card">
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <img src="img/summit.jpg" alt="Placeholder Image" />
-      <div class="card-overlay">
-        <p>
-          Intel hosts its first Sustainability Summit, uniting suppliers, 
-          government officials, and industry leaders to collaborate on 
-          next-generation sustainable semiconductor manufacturing.
-        </p>
-      </div>
-    </div>
-  
-  
-  </div>
-  <p class = "scroll">Scroll to view timeline | Hover over cards to learn more!</p>
-  
+    <p class="scroll">Scroll to view timeline | Hover over cards to learn more!</p>
   </section>
 
   <!-- Add Bootstrap JavaScript at the end of the body for best performance -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
