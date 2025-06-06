@@ -38,12 +38,13 @@ section {
 header {
     /* Center the hero section */
     margin: 0 auto;
+    
 
     /* Make the header take up the full width of the viewport */
     width: 100%;
 
     /* Add padding for space inside the header */
-    padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+    padding: 6vh 10vw 6vh 10vw; /* Top, right, bottom, left */
 
     color: whitesmoke; /* Set text color to white */
 
@@ -115,7 +116,7 @@ header p {
     width: 100%;            /* Image fills the card's width */
     height: 180px;          /* Fixed height for all images */
     object-fit: cover;      /* Crop the image if it doesn't fit */
-    border-radius: 4px;     /* Rounded corners for images */
+    border-radius: 10px;     /* Rounded corners for images */
     display: block;         /* Make sure the image is a block element */
     /* object-fit: cover makes sure the image fills the space and crops if needed */
 }
@@ -159,8 +160,7 @@ header p {
     }
 
     header {
-
-        padding: 3vh 10vw 3vh 10vw; /* Top, right, bottom, left */
+      margin : 0 auto; /* Center the paragraph */
     }
 
     header img {
@@ -173,7 +173,8 @@ header p {
 
     header p {
         font-size: 1em; /* Smaller text for smaller screens */
-        margin : 0 auto; /* Center the paragraph */
+        
+        padding: 2vh 0vw, 2vh, 0vw;
     }
 
     .timeline {
