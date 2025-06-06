@@ -13,6 +13,7 @@ body {
 p {
     font-size: 1em;
     padding: 10px;
+    color: whitesmoke;
 }
 
 h1 {
@@ -99,16 +100,15 @@ header p {
 
     /* Make each card snap to the start of the scroll area */
     scroll-snap-align: start;      /* Snap each card to the start */
-}
-
-/* Make sure text wraps and doesn't overflow the card */
-.card p {
+    color: whitesmoke;
     word-wrap: break-word;   /* Break long words to fit in the card */
     overflow-wrap: break-word; /* Break long words to fit in the card */
     white-space: normal;     /* Allow text to wrap to the next line */
     font-size: 1.2em;          /* Keep font size readable */
     max-width: 100%;         /* Prevent text from overflowing horizontally */
 }
+
+
 
 /* Make the image fill the card and crop if needed */
 .card img {
@@ -149,6 +149,7 @@ header p {
     margin-right: auto;
 }
 
+/*Media Section */
 
 @media (max-width: 500px) {
 
@@ -197,6 +198,6 @@ header p {
     }
 
     .scroll {
-        font-size: 0.7em; /* Smaller text for smaller screens */
+        opacity: 0;
     }
   }
