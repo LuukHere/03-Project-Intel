@@ -169,14 +169,38 @@ header p {
   padding-top: 0;
 }
 
+.columns {
+  border: 2px solid #cccccc;   /* Add a dark blue box outline */
+  background: white;           /* White background inside the box for contrast */
+  box-sizing: border-box;
+  padding: 4vh 5vw 0vh 5vw;
+  border-radius: 3px;
+}
 .container p{
   color: black;
 }
 
-.btn {
-  background-color: rgba(0, 113, 197, 0.9);
+/* Center the Learn More buttons in their columns and style them as outlined blue buttons */
+.square-btn {
+  background-color: white;                /* White inside */
+  color: rgb(0, 113, 197);                /* Blue text */
+  border: 2px solid rgb(0, 113, 197);     /* Blue outline */
   font-size: .8em;
   margin-bottom: 5vh;
+  border-radius: 0 !important;            /* Remove rounded corners */
+  padding: 10px 20px;
+  margin-top: 10px;
+  display: block;                         /* Make the button take up the full line */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;                     /* Center the text inside the button */
+  transition: background 0.2s, color 0.2s;/* Smooth color transition on hover */
+}
+
+/* Optional: Add a hover effect for beginners to see feedback */
+.square-btn:hover, .square-btn:focus {
+  background-color: rgb(0, 113, 197);     /* Blue background on hover */
+  color: white;                           /* White text on hover */
 }
 
 /*Media Section */
