@@ -75,7 +75,7 @@ header p {
     gap: 20px;                     /* Space between cards */
     overflow-x: auto;              /* Enable horizontal scrolling if needed */
     box-sizing: border-box;        /* Include border and padding in the width */
-    width: 75%;                   /* Take up 100% of the available width */
+    width: 80%;                   /* Take up 100% of the available width */
     padding-bottom: 0vh;           /* Space below the timeline */
     padding-top: 1vh;              /* Space above the timeline */
     padding-left: 1vw;
@@ -171,6 +171,12 @@ header p {
 
 .container p{
   color: black;
+}
+
+.btn {
+  background-color: rgba(0, 113, 197, 0.9);
+  font-size: .8em;
+  margin-bottom: 5vh;
 }
 
 /*Media Section */
