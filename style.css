@@ -76,7 +76,7 @@ header p {
     overflow-x: auto;              /* Enable horizontal scrolling if needed */
     box-sizing: border-box;        /* Include border and padding in the width */
     width: 75%;                   /* Take up 100% of the available width */
-    padding-bottom: 1vh;           /* Space below the timeline */
+    padding-bottom: 0vh;           /* Space below the timeline */
     padding-top: 1vh;              /* Space above the timeline */
     padding-left: 1vw;
 
@@ -159,12 +159,14 @@ header p {
     /* You can also add margin if you want to center the whole element */
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 0;
 }
 
 
 .container {
   color: black;
   margin: 0 auto; 
+  padding-top: 0;
 }
 
 .container p{
@@ -223,6 +225,6 @@ header p {
     }
 
     .scroll {
-        opacity: 0;
+        display: none;
     }
   }
