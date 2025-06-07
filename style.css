@@ -145,7 +145,8 @@ header p {
     background: rgba(0, 113, 197, 0.9); /* Dark grey, translucent */
     opacity: 0; /* Start hidden */
     transition: opacity 0.3s;
-    border-radius: 4px;
+    border-radius: 8px;      /* Rounded corners for a softer look */
+
 }
 
 /* Show the overlay when hovering the container */
