@@ -76,12 +76,14 @@ header p {
     overflow-x: auto;              /* Enable horizontal scrolling if needed */
     box-sizing: border-box;        /* Include border and padding in the width */
     width: 75%;                   /* Take up 100% of the available width */
-    margin: 0 auto;                /* Center the timeline */
     padding-bottom: 1vh;           /* Space below the timeline */
-    padding-top: 5em;              /* Space above the timeline */
+    padding-top: 1vh;              /* Space above the timeline */
+    padding-left: 1vw;
 
     /* Add scroll snap for smooth card snapping */
     scroll-snap-type: x mandatory; /* Enable horizontal scroll snap */
+
+    
 }
 
 
@@ -107,6 +109,15 @@ header p {
     white-space: normal;     /* Allow text to wrap to the next line */
     font-size: 1.2em;          /* Keep font size readable */
     max-width: 100%;         /* Prevent text from overflowing horizontally */
+
+    /* Transitions */
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.card:hover, .card:focus {
+  /* Transitions */
+  transform: scale(1.03);
 }
 
 
@@ -150,6 +161,16 @@ header p {
     margin-right: auto;
 }
 
+
+.container {
+  color: black;
+  margin: 0 auto; 
+}
+
+.container p{
+  color: black;
+}
+
 /*Media Section */
 
 @media (max-width: 500px) {
@@ -169,12 +190,13 @@ header p {
     }
     header h1{
         font-size: 1.3em; /* Smaller text for smaller screens */
+        padding: 1vh 0vw 2vh 0vw;
     }
 
     header p {
-        font-size: 1em; /* Smaller text for smaller screens */
+        font-size: 1.1em; /* Smaller text for smaller screens */
         
-        padding: 2vh 0vw, 2vh, 0vw;
+        padding: 2vh 0vw, 0vh, 0vw;
     }
 
     .timeline {
@@ -187,15 +209,17 @@ header p {
         margin: 0;                /* Remove margin */
         padding: 0;               /* Remove padding */
         box-sizing: border-box;   /* Include border and padding in the width */
+        padding-bottom: 0;
     }
 
     .card {
-        min-width: 100%;          /* Card takes full width of container */
-        max-width: 100%;
+        margin: 0 auto;
+        min-width: 80%;          /* Card takes full width of container */
+        max-width: 80%;
         box-sizing: border-box;   /* Include padding and border in the width */
     }
     .card p {
-        font-size: 1.2em; /* Smaller text for smaller screens */
+        font-size: 1.1em; /* Smaller text for smaller screens */
     }
 
     .scroll {
